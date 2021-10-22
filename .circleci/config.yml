@@ -10,7 +10,7 @@ jobs:
           name: "echo environment variables from org-global context"
           command: echo my_env_variable
           
- workflows:
+workflows:
   my-workflow:
     jobs:
       - run-tests:
