@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  run-tests:
+    docker:
+      - image: cimg/ruby:3.0.2
+    steps:
+      - checkout
+      - run:
+          name: "echo environment variables from org-global context"
+          command: echo my_env_variable
+          
+ workflows:
+  my-workflow:
+    jobs:
+      - run-tests:
+          context:
+            - test_context
+           
